@@ -10,7 +10,7 @@
     "parcel": "^2.8.3"
   },
   "scripts": {
-    "serve": "parcel ./src/index.html -p 3000 --open"
+    "serve": "parcel ./src/index.html -p 4200 --open"
   },
   "repository": {
     "type": "git",

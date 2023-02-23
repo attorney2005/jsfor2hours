@@ -1,25 +1,3 @@
-const model = [
-    {
-        type: "title",
-        value: "Hello World from JS!!!!!!"
-    },
-    {
-        type: "text",
-        value: "here we go with come next"
-    },
-    {
-        type: "columns",
-        value: [
-            "111111111",
-            "222222222",
-            "333333333"
-        ]
-    },
-    {
-        type: "image",
-        value: "./assets/image.png"
-    }
-];
 const $site = document.querySelector("#site");
 model.forEach((block)=>{
     let html = "";
