@@ -1,0 +1,27 @@
+{
+  "name": "jsfor2hours",
+  "version": "1.0.0",
+  "description": "javascript pure application",
+  "main": "index.js",
+  "dependencies": {
+    "emmet": "^2.3.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/attorney2005/jsfor2hours.git"
+  },
+  "keywords": [
+    "js",
+    "javascript"
+  ],
+  "author": "Vadim Baibuz <attorney2005@yandex.ru>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/attorney2005/jsfor2hours/issues"
+  },
+  "homepage": "https://github.com/attorney2005/jsfor2hours#readme"
+}
