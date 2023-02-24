@@ -561,13 +561,21 @@ var _model = require("./model");
 var _templates = require("./templates");
 var _mainCss = require("./styles/main.css");
 const $site = document.querySelector("#site");
+console.log((0, _templates.templates)["title"]);
 (0, _model.model).forEach((block)=>{
-    let html = "";
-    if (block.type === "title") html = (0, _templates.title)(block);
-    else if (block.type === "text") html = (0, _templates.text)(block);
-    else if (block.type === "columns") html = (0, _templates.columns)(block);
-    else if (block.type === "image") html = (0, _templates.image)(block);
-    $site.insertAdjacentHTML("beforeend", html);
+    //   let html=''
+    //   if (block.type === 'title'){
+    //     html = title(block)
+    //     } else if (block.type === 'text'){
+    //     html = text(block)
+    //   } else if (block.type === 'columns'){
+    //     html = columns(block)
+    //   }
+    //   else if (block.type === 'image'){
+    //     html = image(block)
+    //   }
+    const toHTML = (0, _templates.templates)[block.type];
+    $site.insertAdjacentHTML("beforeend", toHTML(block));
 });
 
 },{"./model":"dEDha","./templates":"gOO7a","./styles/main.css":"clPKd"}],"dEDha":[function(require,module,exports) {
@@ -630,10 +638,7 @@ exports.export = function(dest, destName, get) {
 },{}],"gOO7a":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "title", ()=>title);
-parcelHelpers.export(exports, "text", ()=>text);
-parcelHelpers.export(exports, "columns", ()=>columns);
-parcelHelpers.export(exports, "image", ()=>image);
+parcelHelpers.export(exports, "templates", ()=>templates);
 function title(block) {
     return `
         <div class="row">
@@ -667,6 +672,12 @@ function image(block) {
 </div>
   `;
 }
+const templates = {
+    title,
+    text,
+    columns,
+    image
+};
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"clPKd":[function() {},{}]},["jC2qd","8lqZg"], "8lqZg", "parcelRequirebbd0")
 
