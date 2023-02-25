@@ -2,7 +2,6 @@
   "name": "jsfor2hours",
   "version": "1.0.0",
   "description": "javascript pure application",
-  "main": "src/index.js",
   "dependencies": {
     "emmet": "^2.3.6"
   },
@@ -10,6 +9,7 @@
     "parcel": "^2.8.3"
   },
   "scripts": {
+    "start": "node index.js",
     "serve": "parcel ./src/index.html -p 4200 --open",
     "build": "parcel build ./src/index.html --no-source-maps"
   },
