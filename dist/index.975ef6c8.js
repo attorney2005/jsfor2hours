@@ -561,10 +561,9 @@ var _model = require("./model");
 var _templates = require("./templates");
 var _mainCss = require("./styles/main.css");
 const $site = document.querySelector("#site");
-console.log((0, _templates.templates)["title"]);
 (0, _model.model).forEach((block)=>{
     const toHTML = (0, _templates.templates)[block.type];
-    if (toHTML) $site.insertAdjacentHTML("beforeend", toHTML(block));
+    $site.insertAdjacentHTML("beforeend", toHTML(block));
 });
 
 },{"./model":"dEDha","./templates":"gOO7a","./styles/main.css":"clPKd"}],"dEDha":[function(require,module,exports) {
@@ -573,30 +572,58 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "model", ()=>model);
 var _imagePng = require("./assets/image.png");
 var _imagePngDefault = parcelHelpers.interopDefault(_imagePng);
+const text = `
+Крутые видео и уроки по JavaScript тут: <a href="https://youtube.com/c/VladilenMinin" target="_blank">Владилен Минин</a>. Тут ты найдешь исчерпывающую информацию по любым аспектам языка, любым фреймворкам, такие как: React, Vue, Angular, Node, Svelte, Express, Next, Nuxt и многое другое. Присоединяйся!
+`;
 const model = [
     {
         type: "title",
         value: "Hello World from JS!!!!!!",
         options: {
             teg: "h3",
-            styles: "background: linear-gradient(to right, #ff0099, #493240); color: #fff; text-align: center; padding: 1.5rem"
+            styles: {
+                background: "linear-gradient(to right, #ff0099, #493240)",
+                color: "#fff;",
+                padding: "1rem",
+                "text-align": "center"
+            }
         }
     },
     {
         type: "text",
-        value: "here we go with come next"
+        value: text,
+        options: {
+            styles: {
+                background: "linear-gradient(to left, #f2994a, #f2c94c)"
+            }
+        }
     },
     {
         type: "columns",
         value: [
-            "111111111",
-            "222222222",
-            "333333333"
-        ]
+            "Добро пожаловать на курс MDN JavaScript для начинающих!",
+            "В первой статье курса мы дадим базовое определение JavaScript, ",
+            "ответим на вопросы \xabЧто такое JavaScript?\xbb и \xabЧто он делает?\xbb, узнаем как работает JavaScript и как добавить его на веб-страницу."
+        ],
+        options: {
+            styles: {
+                background: "linear-gradient(to bottom, #8e2de2, #4a00e0)",
+                padding: "2 rem",
+                color: "#fff;",
+                "font-weight": "bold"
+            }
+        }
     },
     {
         type: "image",
-        value: (0, _imagePngDefault.default)
+        value: (0, _imagePngDefault.default),
+        options: {
+            styles: {
+                padding: "2 rem 0",
+                display: "flex",
+                "justify-content": "center"
+            }
+        }
     }
 ];
 
@@ -681,31 +708,17 @@ function title(block) {
     //       </div>
     //   `
     const { tag ="h1" , styles  } = block.options;
-    return (0, _utils.row)((0, _utils.col)(`<${tag}>${block.value}</${tag}>`), styles);
+    return (0, _utils.row)((0, _utils.col)(`<${tag}>${block.value}</${tag}>`), (0, _utils.css)(styles));
 }
 function text(block) {
-    return `
-    <div class="row">
-            <div class="col-sm">
-               <p>${block.value}</p>
-            </div>
-    </div>
-    `;
+    return (0, _utils.row)((0, _utils.col)(`<p>${block.value}</p>`));
 }
 function columns(block) {
-    const html = block.value.map((item)=>`<div class="col-sm">${item}</div>`);
-    return `
-        <div class="row">
-         ${html.join("")}
-        </div>
-    `;
+    const html = block.value.map((0, _utils.col)).join("");
+    return (0, _utils.row)(html, (0, _utils.css)(block.options.styles));
 }
 function image(block) {
-    return `
-  <div class="row">
-  <img src="${block.value}">
-</div>
-  `;
+    return (0, _utils.row)(`<img src="${block.value}"/>`, (0, _utils.css)(block.options.styles));
 }
 const templates = {
     title,
@@ -719,11 +732,21 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "row", ()=>row);
 parcelHelpers.export(exports, "col", ()=>col);
+parcelHelpers.export(exports, "css", ()=>css);
 function row(content, styles = "") {
     return `<div class="row" style="${styles}">${content}</div>`;
 }
 function col(content) {
     return `<div class="col-sm">${content}</div>`;
+}
+function css(styles = {}) {
+    // const keys = Object.keys(styles)
+    // const array = keys.map(key => {
+    //   return '${key} : ${styles[key]}'
+    // })
+    // return array.join(';')
+    const toString = (key)=>`${key} : ${styles[key]}`;
+    return Object.keys(styles).map(toString).join(";");
 }
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"clPKd":[function() {},{}]},["jC2qd","8lqZg"], "8lqZg", "parcelRequirebbd0")

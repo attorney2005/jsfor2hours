@@ -2,21 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b30bbfe-e366-4865-bb84-cbec3a97d993" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/utils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.parcel-cache/3dfa7017b4506afa" beforeDir="false" afterPath="$PROJECT_DIR$/.parcel-cache/3dfa7017b4506afa" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.parcel-cache/7ab7b10b07d5a116" beforeDir="false" afterPath="$PROJECT_DIR$/.parcel-cache/7ab7b10b07d5a116" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.parcel-cache/895a125525abcac0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/.parcel-cache/895a125525abcac0.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.parcel-cache/a884faae01a13bd1" beforeDir="false" afterPath="$PROJECT_DIR$/.parcel-cache/a884faae01a13bd1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.parcel-cache/aaacb7c44b5c5fbd.txt" beforeDir="false" afterPath="$PROJECT_DIR$/.parcel-cache/aaacb7c44b5c5fbd.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.parcel-cache/data.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/.parcel-cache/data.mdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.parcel-cache/lock.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/.parcel-cache/lock.mdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.975ef6c8.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.975ef6c8.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.975ef6c8.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.975ef6c8.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/model.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/templates.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +96,10 @@
       <workItem from="1677155638893" duration="2587000" />
       <workItem from="1677159685969" duration="6964000" />
       <workItem from="1677223944217" duration="933000" />
-      <workItem from="1677225016646" duration="12819000" />
+      <workItem from="1677225016646" duration="23084000" />
+      <workItem from="1677345395227" duration="5111000" />
+      <workItem from="1677390197387" duration="9115000" />
+      <workItem from="1677428743555" duration="7564000" />
     </task>
     <servers />
   </component>
