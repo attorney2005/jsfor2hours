@@ -558,15 +558,13 @@ function hmrAccept(bundle, id) {
 
 },{}],"8lqZg":[function(require,module,exports) {
 var _model = require("./model");
-var _templates = require("./templates");
 var _mainCss = require("./styles/main.css");
 const $site = document.querySelector("#site");
 (0, _model.model).forEach((block)=>{
-    const toHTML = (0, _templates.templates)[block.type];
-    $site.insertAdjacentHTML("beforeend", toHTML(block));
+    $site.insertAdjacentHTML("beforeend", block.toHTML());
 });
 
-},{"./model":"dEDha","./templates":"gOO7a","./styles/main.css":"clPKd"}],"dEDha":[function(require,module,exports) {
+},{"./model":"dEDha","./styles/main.css":"clPKd"}],"dEDha":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "model", ()=>model);
@@ -693,69 +691,54 @@ parcelHelpers.export(exports, "TitleBlock", ()=>TitleBlock);
 parcelHelpers.export(exports, "ImageBlock", ()=>ImageBlock);
 parcelHelpers.export(exports, "ColumnsBlock", ()=>ColumnsBlock);
 parcelHelpers.export(exports, "TextBlock", ()=>TextBlock);
+var _utils = require("../utils");
 class Block {
     constructor(type, value, options){
         this.type = type;
         this.value = value;
         this.options = options;
     }
+    toHTML() {
+        throw new Error("Метод toHTML должен быть реализован");
+    }
 }
 class TitleBlock extends Block {
     constructor(value, options){
         super("title", value, options);
+    }
+    toHTML() {
+        const { tag ="h1" , styles  } = this.options;
+        return (0, _utils.row)((0, _utils.col)(`<${tag}>${this.value}</${tag}>`), (0, _utils.css)(styles));
     }
 }
 class ImageBlock extends Block {
     constructor(value, options){
         super("image", value, options);
     }
+    toHTML() {
+        const { imageStyles: is , alt ="" , styles  } = this.options;
+        return (0, _utils.row)(`<img src="${this.value}" alt="${alt}" style="${(0, _utils.css)(is)}"/>`, (0, _utils.css)(styles));
+    }
 }
 class ColumnsBlock extends Block {
     constructor(value, options){
         super("columns", value, options);
+    }
+    toHTML() {
+        const html = this.value.map((0, _utils.col)).join("");
+        return (0, _utils.row)(html, (0, _utils.css)(this.options.styles));
     }
 }
 class TextBlock extends Block {
     constructor(value, options){
         super("text", value, options);
     }
+    toHTML() {
+        return (0, _utils.row)((0, _utils.col)(`<p>${this.value}</p>`), (0, _utils.css)(this.options.styles));
+    }
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gOO7a":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "templates", ()=>templates);
-var _utils = require("./utils");
-function title(block) {
-    // return `
-    //       <div class="row">
-    //           <div class="col-sm">
-    //               <h1>${block.value}</h1>
-    //           </div>
-    //       </div>
-    //   `
-    const { tag ="h1" , styles  } = block.options;
-    return (0, _utils.row)((0, _utils.col)(`<${tag}>${block.value}</${tag}>`), (0, _utils.css)(styles));
-}
-function text(block) {
-    return (0, _utils.row)((0, _utils.col)(`<p>${block.value}</p>`), (0, _utils.css)(block.options.styles));
-}
-function columns(block) {
-    const html = block.value.map((0, _utils.col)).join("");
-    return (0, _utils.row)(html, (0, _utils.css)(block.options.styles));
-}
-function image(block) {
-    const { imageStyles: is , alt ="" , styles  } = block.options;
-    return (0, _utils.row)(`<img src="${block.value}" alt="${alt}" style="${(0, _utils.css)(is)}"/>`, (0, _utils.css)(styles));
-}
-const templates = {
-    title,
-    text,
-    columns,
-    image
-};
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./utils":"en4he"}],"en4he":[function(require,module,exports) {
+},{"../utils":"en4he","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"en4he":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "row", ()=>row);
