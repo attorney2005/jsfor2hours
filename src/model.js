@@ -1,11 +1,11 @@
 import image from './assets/image.png'
-import  {Block} from "./classes/blocks";
+import  {TitleBlock, ImageBlock, ColumnsBlock, TextBlock} from "./classes/blocks";
 
 const text = `
 Крутые видео и уроки по JavaScript тут: <a href="https://youtube.com/c/VladilenMinin" target="_blank">Владилен Минин</a>. Тут ты найдешь исчерпывающую информацию по любым аспектам языка, любым фреймворкам, такие как: React, Vue, Angular, Node, Svelte, Express, Next, Nuxt и многое другое. Присоединяйся!
 `
 export const model = [
-    new Block('title', 'Hello World from JS!!!!!!', {
+    new TitleBlock('Hello World from JS!!!!!!', {
           teg: 'h3',
           styles:{
             background: 'linear-gradient(to right, #ff0099, #493240)',
@@ -14,7 +14,7 @@ export const model = [
             'text-align': 'center'
           }
         }),
-  new Block ('image', image, {
+  new ImageBlock (image, {
       styles: {
         padding: '2 rem 0',
         display: 'flex',
@@ -27,7 +27,7 @@ export const model = [
       alt: 'Это картинка'
 
   }),
-  new Block('columns', [
+  new ColumnsBlock([
       'Добро пожаловать на курс JavaScript для начинающих!',
       'В первой статье курса мы дадим базовое определение JavaScript, ',
       'Ответим на вопросы «Что такое JavaScript?» и «Что он делает?»'
@@ -41,7 +41,7 @@ export const model = [
     }
   ),
 
-  new Block('text', text, {
+  new TextBlock(text, {
       styles: {
         background: 'linear-gradient(to left, #f2994a, #f2c94c)',
         padding: '1rem',

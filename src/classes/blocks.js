@@ -1,4 +1,4 @@
-export class Block {
+class Block {
   constructor(type, value, options) {
     this.type = type
     this.value = value
@@ -20,7 +20,7 @@ export class ImageBlock extends Block {
 
 export class ColumnsBlock extends Block {
   constructor(value, options) {
-    super('column', value, options);
+    super('columns', value, options);
   }
 }
 

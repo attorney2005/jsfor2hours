@@ -577,7 +577,7 @@ const text = `
 Крутые видео и уроки по JavaScript тут: <a href="https://youtube.com/c/VladilenMinin" target="_blank">Владилен Минин</a>. Тут ты найдешь исчерпывающую информацию по любым аспектам языка, любым фреймворкам, такие как: React, Vue, Angular, Node, Svelte, Express, Next, Nuxt и многое другое. Присоединяйся!
 `;
 const model = [
-    new (0, _blocks.Block)("title", "Hello World from JS!!!!!!", {
+    new (0, _blocks.TitleBlock)("Hello World from JS!!!!!!", {
         teg: "h3",
         styles: {
             background: "linear-gradient(to right, #ff0099, #493240)",
@@ -586,7 +586,7 @@ const model = [
             "text-align": "center"
         }
     }),
-    new (0, _blocks.Block)("image", (0, _imagePngDefault.default), {
+    new (0, _blocks.ImageBlock)((0, _imagePngDefault.default), {
         styles: {
             padding: "2 rem 0",
             display: "flex",
@@ -598,7 +598,7 @@ const model = [
         },
         alt: "Это картинка"
     }),
-    new (0, _blocks.Block)("columns", [
+    new (0, _blocks.ColumnsBlock)([
         "Добро пожаловать на курс JavaScript для начинающих!",
         "В первой статье курса мы дадим базовое определение JavaScript, ",
         "Ответим на вопросы \xabЧто такое JavaScript?\xbb и \xabЧто он делает?\xbb"
@@ -610,7 +610,7 @@ const model = [
             "font-weight": "bold"
         }
     }),
-    new (0, _blocks.Block)("text", text, {
+    new (0, _blocks.TextBlock)(text, {
         styles: {
             background: "linear-gradient(to left, #f2994a, #f2c94c)",
             padding: "1rem",
@@ -689,7 +689,6 @@ exports.getOrigin = getOrigin;
 },{}],"gMfMj":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Block", ()=>Block);
 parcelHelpers.export(exports, "TitleBlock", ()=>TitleBlock);
 parcelHelpers.export(exports, "ImageBlock", ()=>ImageBlock);
 parcelHelpers.export(exports, "ColumnsBlock", ()=>ColumnsBlock);
@@ -713,7 +712,7 @@ class ImageBlock extends Block {
 }
 class ColumnsBlock extends Block {
     constructor(value, options){
-        super("column", value, options);
+        super("columns", value, options);
     }
 }
 class TextBlock extends Block {
