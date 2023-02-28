@@ -693,8 +693,7 @@ parcelHelpers.export(exports, "ColumnsBlock", ()=>ColumnsBlock);
 parcelHelpers.export(exports, "TextBlock", ()=>TextBlock);
 var _utils = require("../utils");
 class Block {
-    constructor(type, value, options){
-        this.type = type;
+    constructor(value, options){
         this.value = value;
         this.options = options;
     }
@@ -704,7 +703,7 @@ class Block {
 }
 class TitleBlock extends Block {
     constructor(value, options){
-        super("title", value, options);
+        super(value, options);
     }
     toHTML() {
         const { tag ="h1" , styles  } = this.options;
@@ -713,7 +712,7 @@ class TitleBlock extends Block {
 }
 class ImageBlock extends Block {
     constructor(value, options){
-        super("image", value, options);
+        super(value, options);
     }
     toHTML() {
         const { imageStyles: is , alt ="" , styles  } = this.options;
@@ -722,7 +721,7 @@ class ImageBlock extends Block {
 }
 class ColumnsBlock extends Block {
     constructor(value, options){
-        super("columns", value, options);
+        super(value, options);
     }
     toHTML() {
         const html = this.value.map((0, _utils.col)).join("");
@@ -731,7 +730,7 @@ class ColumnsBlock extends Block {
 }
 class TextBlock extends Block {
     constructor(value, options){
-        super("text", value, options);
+        super(value, options);
     }
     toHTML() {
         return (0, _utils.row)((0, _utils.col)(`<p>${this.value}</p>`), (0, _utils.css)(this.options.styles));
