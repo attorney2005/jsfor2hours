@@ -13,7 +13,7 @@ function title(block) {
 }
 
 function text(block) {
-  return row(col(`<p>${block.value}</p>`))
+  return row(col(`<p>${block.value}</p>`), css(block.options.styles))
 }
 
 function columns(block) {
@@ -22,7 +22,8 @@ function columns(block) {
 }
 
 function image(block) {
-  return row(`<img src="${block.value}"/>`, css(block.options.styles))
+  const {imageStyles: is, alt='', styles} = block.options
+  return row(`<img src="${block.value}" alt="${alt}" style="${css(is)}"/>`, css(styles))
 }
 
 export const templates = {

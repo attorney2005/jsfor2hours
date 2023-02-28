@@ -572,62 +572,54 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "model", ()=>model);
 var _imagePng = require("./assets/image.png");
 var _imagePngDefault = parcelHelpers.interopDefault(_imagePng);
+var _blocks = require("./classes/blocks");
 const text = `
 Крутые видео и уроки по JavaScript тут: <a href="https://youtube.com/c/VladilenMinin" target="_blank">Владилен Минин</a>. Тут ты найдешь исчерпывающую информацию по любым аспектам языка, любым фреймворкам, такие как: React, Vue, Angular, Node, Svelte, Express, Next, Nuxt и многое другое. Присоединяйся!
 `;
 const model = [
-    {
-        type: "title",
-        value: "Hello World from JS!!!!!!",
-        options: {
-            teg: "h3",
-            styles: {
-                background: "linear-gradient(to right, #ff0099, #493240)",
-                color: "#fff;",
-                padding: "1rem",
-                "text-align": "center"
-            }
+    new (0, _blocks.Block)("title", "Hello World from JS!!!!!!", {
+        teg: "h3",
+        styles: {
+            background: "linear-gradient(to right, #ff0099, #493240)",
+            color: "#fff;",
+            padding: "1rem",
+            "text-align": "center"
         }
-    },
-    {
-        type: "text",
-        value: text,
-        options: {
-            styles: {
-                background: "linear-gradient(to left, #f2994a, #f2c94c)"
-            }
+    }),
+    new (0, _blocks.Block)("image", (0, _imagePngDefault.default), {
+        styles: {
+            padding: "2 rem 0",
+            display: "flex",
+            "justify-content": "center"
+        },
+        imageStyles: {
+            width: "500px",
+            height: "auto"
+        },
+        alt: "Это картинка"
+    }),
+    new (0, _blocks.Block)("columns", [
+        "Добро пожаловать на курс JavaScript для начинающих!",
+        "В первой статье курса мы дадим базовое определение JavaScript, ",
+        "Ответим на вопросы \xabЧто такое JavaScript?\xbb и \xabЧто он делает?\xbb"
+    ], {
+        styles: {
+            background: "linear-gradient(to bottom, #8e2de2, #4a00e0)",
+            padding: "2 rem",
+            color: "#fff;",
+            "font-weight": "bold"
         }
-    },
-    {
-        type: "columns",
-        value: [
-            "Добро пожаловать на курс MDN JavaScript для начинающих!",
-            "В первой статье курса мы дадим базовое определение JavaScript, ",
-            "ответим на вопросы \xabЧто такое JavaScript?\xbb и \xabЧто он делает?\xbb, узнаем как работает JavaScript и как добавить его на веб-страницу."
-        ],
-        options: {
-            styles: {
-                background: "linear-gradient(to bottom, #8e2de2, #4a00e0)",
-                padding: "2 rem",
-                color: "#fff;",
-                "font-weight": "bold"
-            }
+    }),
+    new (0, _blocks.Block)("text", text, {
+        styles: {
+            background: "linear-gradient(to left, #f2994a, #f2c94c)",
+            padding: "1rem",
+            "font-weight": "bold"
         }
-    },
-    {
-        type: "image",
-        value: (0, _imagePngDefault.default),
-        options: {
-            styles: {
-                padding: "2 rem 0",
-                display: "flex",
-                "justify-content": "center"
-            }
-        }
-    }
+    })
 ];
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./assets/image.png":"ljha9"}],"gkKU3":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./assets/image.png":"ljha9","./classes/blocks":"gMfMj"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -694,7 +686,43 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}],"gOO7a":[function(require,module,exports) {
+},{}],"gMfMj":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Block", ()=>Block);
+parcelHelpers.export(exports, "TitleBlock", ()=>TitleBlock);
+parcelHelpers.export(exports, "ImageBlock", ()=>ImageBlock);
+parcelHelpers.export(exports, "ColumnsBlock", ()=>ColumnsBlock);
+parcelHelpers.export(exports, "TextBlock", ()=>TextBlock);
+class Block {
+    constructor(type, value, options){
+        this.type = type;
+        this.value = value;
+        this.options = options;
+    }
+}
+class TitleBlock extends Block {
+    constructor(value, options){
+        super("title", value, options);
+    }
+}
+class ImageBlock extends Block {
+    constructor(value, options){
+        super("image", value, options);
+    }
+}
+class ColumnsBlock extends Block {
+    constructor(value, options){
+        super("column", value, options);
+    }
+}
+class TextBlock extends Block {
+    constructor(value, options){
+        super("text", value, options);
+    }
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gOO7a":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "templates", ()=>templates);
@@ -711,14 +739,15 @@ function title(block) {
     return (0, _utils.row)((0, _utils.col)(`<${tag}>${block.value}</${tag}>`), (0, _utils.css)(styles));
 }
 function text(block) {
-    return (0, _utils.row)((0, _utils.col)(`<p>${block.value}</p>`));
+    return (0, _utils.row)((0, _utils.col)(`<p>${block.value}</p>`), (0, _utils.css)(block.options.styles));
 }
 function columns(block) {
     const html = block.value.map((0, _utils.col)).join("");
     return (0, _utils.row)(html, (0, _utils.css)(block.options.styles));
 }
 function image(block) {
-    return (0, _utils.row)(`<img src="${block.value}"/>`, (0, _utils.css)(block.options.styles));
+    const { imageStyles: is , alt ="" , styles  } = block.options;
+    return (0, _utils.row)(`<img src="${block.value}" alt="${alt}" style="${(0, _utils.css)(is)}"/>`, (0, _utils.css)(styles));
 }
 const templates = {
     title,
