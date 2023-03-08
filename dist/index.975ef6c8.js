@@ -570,7 +570,7 @@ var _imagePng = require("./assets/image.png");
 var _imagePngDefault = parcelHelpers.interopDefault(_imagePng);
 var _blocks = require("./classes/blocks");
 const text = `
-Крутые видео и уроки по JavaScript тут: <a href="https://youtube.com/c/VladilenMinin" target="_blank">Владилен Минин</a>. Тут ты найдешь исчерпывающую информацию по любым аспектам языка, любым фреймворкам, такие как: React, Vue, Angular, Node, Svelte, Express, Next, Nuxt и многое другое. Присоединяйся!
+Крутые видео и уроки по JavaScript тут: <a href="https://youtube.com/c/VladilenMinin" target="_blank"></a>. Тут ты найдешь исчерпывающую информацию по любым аспектам языка, любым фреймворкам, такие как: React, Vue, Angular, Node, Svelte, Express, Next, Nuxt и многое другое. Присоединяйся!
 `;
 const model = [
     new (0, _blocks.TitleBlock)("Hello World from JS!!!!!!", {
