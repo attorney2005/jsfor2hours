@@ -2,11 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b30bbfe-e366-4865-bb84-cbec3a97d993" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/classes/sidebar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classes/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.parcel-cache/data.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/.parcel-cache/data.mdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.975ef6c8.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.975ef6c8.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.975ef6c8.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.975ef6c8.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.parcel-cache/0068700d3ec12626" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.parcel-cache/0eec3c94b448e577" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.parcel-cache/0f817512aa19eef7.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.parcel-cache/3c8afccff877f46e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.parcel-cache/3dfa7017b4506afa" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.parcel-cache/404375cfe06fe1a3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.parcel-cache/4ffaa28717bbb341" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.parcel-cache/7ab7b10b07d5a116" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.parcel-cache/895a125525abcac0.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.parcel-cache/a04181a283351677" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.parcel-cache/a884faae01a13bd1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.parcel-cache/a9f5484dda8bfe2c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.parcel-cache/aaacb7c44b5c5fbd.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.parcel-cache/be421f5ad77beb1a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.parcel-cache/c25b603dd412b7ca" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.parcel-cache/d43c1a783b32ded4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.parcel-cache/data.mdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.parcel-cache/e04b3d91b3e6bb72" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.parcel-cache/e9e81ad2b117c63e.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.parcel-cache/faf76a89a5ae82aa" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.parcel-cache/fbbf5196fed5bffd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.parcel-cache/lock.mdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/image.513edb25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/image.5ed053b0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.21b42353.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.51458f43.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.5525e4b8.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.5525e4b8.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.975ef6c8.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.975ef6c8.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/sidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/classes/site.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/site.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils.js" afterDir="false" />
     </list>
@@ -94,7 +124,8 @@
       <workItem from="1677225016646" duration="23084000" />
       <workItem from="1677345395227" duration="5111000" />
       <workItem from="1677390197387" duration="9115000" />
-      <workItem from="1677428743555" duration="31692000" />
+      <workItem from="1677428743555" duration="40915000" />
+      <workItem from="1678196539332" duration="7830000" />
     </task>
     <servers />
   </component>
