@@ -16,7 +16,7 @@ export const model = [
         }),
   new ImageBlock (image, {
       styles: {
-        padding: '2 rem 0',
+        padding: '2rem 0',
         display: 'flex',
         'justify-content': 'center'
       },

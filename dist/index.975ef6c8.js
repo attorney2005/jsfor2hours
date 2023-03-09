@@ -584,7 +584,7 @@ const model = [
     }),
     new (0, _blocks.ImageBlock)((0, _imagePngDefault.default), {
         styles: {
-            padding: "2 rem 0",
+            padding: "2rem 0",
             display: "flex",
             "justify-content": "center"
         },
